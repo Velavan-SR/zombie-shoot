@@ -1,6 +1,5 @@
 let gunShot = new Audio('./assets/shotgun.wav');
 let gameBody = document.getElementById('game-body');
-const maxLives = document.getElementById('lives');
 let zombieID=0;
 let lives = 3;
 let zombie;
@@ -50,9 +49,8 @@ function randum(max,min){
 function zombieEscape(zombie){
     if (zombie.getBoundingClientRect().top<0){
         lives--;
-        let currentWidth = parseFloat(maxLives.style.width);
-        currentWidth-=30;
-        maxLives.style.width = currentWidth+'%';
+        const maxLives = document.getElementById('max-lives');
+        maxLives.style.width = lives*33+'%';
         if (lives==0){
             zombieID=0;
             window.location.href = 'game-over.html'
