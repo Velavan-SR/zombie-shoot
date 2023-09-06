@@ -1,7 +1,7 @@
 let gunShot = new Audio('./assets/shotgun.wav');
 let gameBody = document.getElementById('game-body');
 let zombieID=0;
-let lives = 3;
+let lives = 1;
 let zombie;
 
 gameBody.addEventListener('click', () => {
